@@ -1,14 +1,12 @@
-export default function Clock({ time }) {
-    let hours = time.getHours();
-    if (hours >= 0 && hours <= 6) {
-      document.getElementById('time').className = 'night';
-    } else {
-      document.getElementById('time').className = 'day';
-    }
+  export default function Clock({ time }) {
+    const hours = time.getHours();
+    const className = hours >= 0 && hours <= 6 ? 'day' : 'night';
+  
     return (
-      <h1 id="time">
+      <h1 id="time" className={className}>
         {time.toLocaleTimeString()}
       </h1>
     );
   }
+  
   
